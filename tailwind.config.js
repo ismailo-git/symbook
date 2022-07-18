@@ -2,7 +2,11 @@
 module.exports = {
 	content: ["./templates/**/*.html.twig"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				body: "Edu NSW ACT Foundation",
+			},
+		},
 	},
 	plugins: [],
 };
