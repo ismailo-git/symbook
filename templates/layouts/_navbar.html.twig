@@ -5,20 +5,15 @@
 			<span class="self-center text-xl font-semibold whitespace-nowrap text-white">SymBook</span>
 		</a>
 		<div class="flex items-center space-x-2">
-			<a href="{{path('cart')}}" class="text-white font-semibold py-2 px-3 font-medium">
-				<i class="fa-solid fa-cart-arrow-down mr-2"></i>Livres
-
+			<a href="{{path('app_book')}}" class="text-white font-semibold py-2 px-3 font-medium">
+				<i class="fa-solid fa-book mr-2"></i>Livres
 			</a>
 
-			<a href="{{path('cart')}}" class="text-white font-semibold py-2 px-3 font-medium">
+			<a href="{{path('app_cart')}}" class="text-white font-semibold py-2 px-3 font-medium">
 				<i class="fa-solid fa-cart-arrow-down mr-2"></i>Panier
 
 			</a>
 			{% if app.user %}
-
-				<a href="{{path('app_login')}}" class="text-white py-2 px-3 text-lg font-medium">
-					<i class="fa-solid fa-ticket mr-2"></i>
-					Mes commandes</a>
 
 				<a href="{{path('app_logout')}}" class="text-white py-2 px-3 text-lg font-medium">
 					<i class="fa-solid fa-power-off mr-2"></i>Déconnexion</a>
@@ -27,7 +22,7 @@
 			{% else %}
 				<a href="{{path('app_login')}}" class="text-white py-2 px-3 text-lg font-medium">
 					<i class="fa-solid fa-right-to-bracket mr-2"></i>Connexion</a>
-				<a href="{{path('app_register')}}" class="bg-green-500 mr-6 text-lg text-white py-2 px-3 rounded-xl font-medium text-blue-500 dark:text-white">Inscription</a>
+				<a href="{{path('app_register')}}" class="bg-green-500 mr-6 text-lg text-white py-2 px-3 rounded-md font-bold font-medium dark:text-white">Inscription</a>
 			{% endif %}
 		</div>
 	</div>
@@ -38,7 +33,7 @@
 			<ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
 				<li class="list-none space-x-10">
 					{% for category in categoryRepository.findAll() %}
-						<a href="{{path('product_category', {'slug': category.slug})}}" class="text-gray-900 font-semibold text-lg dark:text-white hover:underline" aria-current="page">{{category.name}}</a>
+						<a href="{{path('book_category', {'slug': category.slug})}}" class="text-gray-900 font-semibold text-lg dark:text-white hover:underline" aria-current="page">{{category.name}}</a>
 
 					{% endfor %}
 

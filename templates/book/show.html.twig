@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{book.title}}
+{% endblock %}
+
+
+{% block body %}
+	<section class="text-gray-600 body-font overflow-hidden">
+		{% for messages in app.flashes %}
+			<div>
+				{% for message in messages %}
+					<p class="bg-green-500 text-white p-3">{{ message }}</p>
+
+				{% endfor %}
+			</div>
+		{% endfor %}
+		<div class="container px-5 py-14 mx-auto">
+			<div class="lg:w-2/4 mx-auto flex flex-wrap">
+				<img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-44 object-cover object-center rounded" src="/uploads/books/{{book.imagePath}}">
+				<div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+					<h2 class="text-sm title-font text-gray-500 tracking-widest">{{book.category.name}}</h2>
+					<h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{book.title}}</h1>
+					<p class="leading-relaxed">{{book.description}}</p>
+					<div class="flex">
+						<span class="title-font font-medium text-2xl text-gray-900">{{book.price / 100}}
+							€</span>
+						<a href="{{path('add_cart', {'id': book.id})}}" class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 rounded-sm block mt-4">Ajouter au
+							<i class="fa-solid fa-cart-arrow-down"></i>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

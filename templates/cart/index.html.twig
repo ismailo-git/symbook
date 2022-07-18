@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+{% block title %}SymShop: Panier
+{% endblock %}
+
+{% block body %}
+	<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+		<div class="flex flex-wrap shadow-md my-10">
+			<div class="w-3/4 bg-white px-10 py-10">
+				{% if dataCart | length > 0 %}
+
+					<div class="flex justify-between border-b pb-8">
+						<h1 class="font-semibold text-2xl">Votre panier</h1>
+
+						<h2 class="font-semibold text-2xl">Vous avez 3 article(s)dans votre panier</h2>
+					</div>
+					<div class="flex mt-10 mb-5">
+						<h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Détail de votre panier</h3>
+						<h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantité</h3>
+						<h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Prix Unitaire</h3>
+						<h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
+					</div>
+					{% for item in dataCart %}
+
+						<div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+
+							<div
+								class="flex w-2/5">
+								<!-- product -->
+								<div class="w-20">
+									<img class="h-24" src="/uploads/books/{{item.book.imagePath}}" alt="">
+								</div>
+								<div class="flex flex-col justify-between ml-4 flex-grow">
+									<span class="font-bold text-sm">{{item.book.title}}</span>
+									<span class="text-gray-800 text-base">{{item.book.price / 100}}
+										€</span>
+									<a href="{{path('remove_cart', {"id": item.book.id})}}" class="font-semibold hover:text-red-500 text-red-500 text-base font-semibold">
+
+										<i class="fa-solid fa-trash-can mr-2"></i>Supprimer</a>
+
+								</div>
+							</div>
+							<div class="flex justify-center w-1/5">
+								<a href="{{path('remove_cart', {"id": item.book.id})}}">
+
+
+									<i class="fa-solid fa-minus"></i>
+
+								</a>
+
+								<input class="mx-2 border text-center w-8" type="text" value="{{item.quantity}}">
+
+								<a href="{{path('add_cart', {"id": item.book.id})}}">
+									<i class="fa-solid fa-plus"></i>
+								</a>
+							</div>
+							<span class="text-center w-1/5 font-semibold text-sm">{{item.book.price / 100}}
+								€</span>
+							<span class="text-center w-1/5 font-semibold text-sm">{{item.quantity * item.book.price / 100}}
+								€</span>
+
+						</div>
+					{% endfor %}
+
+
+					<a href="{{path('app_book')}}" class="flex font-semibold text-indigo-600 text-base mt-10">
+
+						<svg class="fill-current mr-2 text-indigo-600 w-4" viewbox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
+						Continuez vos achats
+					</a>
+					<a href="{{path('delete_cart')}}" class="text-base text-red-500 mt-4 block font-semibold">Vider votre panier
+						<i class="fa-solid fa-trash-can"></i>
+					</a>
+
+
+				</div>
+
+				<div id="summary" class="w-1/4 px-8 py-10">
+					<h1 class="font-semibold text-2xl border-b pb-8">Récapitulatif</h1>
+					<div class="flex justify-between mt-10 mb-5">
+						<div class="border-t mt-8">
+							<div class="flex font-semibold justify-between py-6 text-sm uppercase">
+								<span class="mr-2">Total Panier</span>
+								<span>{{total / 100}}
+									€</span>
+							</div>
+							<button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 px-4 rounded-sm text-sm text-white uppercase w-full">Passer la commande</button>
+						</div>
+					{% else %}
+						<div class="flex justify-center">
+							<div class="text-center">
+								<h2 class="text-gray-800 text-2xl font-semibold">Votre panier est vide</h2>
+								<img src="{{asset('/images/panier.jpg')}}" alt="" class="w-80">
+								<a href="{{path('app_book')}}" class="rounded-sm py-2 px-4 bg-green-500 text-white font-semibold mt-4">Ajouter un produit</a>
+
+							</div>
+						</div>
+
+					{% endif %}
+
+				</div>
+
+			</div>
+		</div>
+
+
+	{% endblock %}
