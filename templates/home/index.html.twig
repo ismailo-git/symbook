@@ -4,68 +4,50 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="text-red-500 font-semibold text-3xl">Home controller</h1>
-	<section class="text-gray-600 body-font relative">
-		<div class="container px-5 py-24 mx-auto">
-			<div class="flex flex-col text-center w-full mb-12">
-				<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-				<p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
-			</div>
-			<div class="lg:w-1/2 md:w-2/3 mx-auto">
-				<div class="flex flex-wrap -m-2">
-					<div class="p-2 w-1/2">
-						<div class="relative">
-							<label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-							<input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-						</div>
-					</div>
-					<div class="p-2 w-1/2">
-						<div class="relative">
-							<label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-							<input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-						</div>
-					</div>
-					<div class="p-2 w-full">
-						<div class="relative">
-							<label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-							<textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-						</div>
-					</div>
-					<div class="p-2 w-full">
-						<button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-					</div>
-					<div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-						<a class="text-indigo-500">example@email.com</a>
-						<p class="leading-normal my-5">49 Smith St.
-							<br>Saint Cloud, MN 56301
-						</p>
-						<span class="inline-flex">
-							<a class="text-gray-500">
-								<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
-									<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-								</svg>
-							</a>
-							<a class="ml-4 text-gray-500">
-								<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
-									<path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-								</svg>
-							</a>
-							<a class="ml-4 text-gray-500">
-								<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
-									<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-									<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-								</svg>
-							</a>
-							<a class="ml-4 text-gray-500">
-								<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
-									<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-								</svg>
-							</a>
+
+	<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+		<div class="grid gap-5 row-gap-8 lg:grid-cols-2">
+			<div class="flex flex-col justify-center">
+				<div class="max-w-xl mb-6">
+					<h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+						The quick, brown fox<br class="hidden md:block"/>
+						jumps over
+						<span class="relative px-1">
+							<div class="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400"></div>
+							<span class="relative inline-block text-deep-purple-accent-400">a lazy dog</span>
 						</span>
+					</h2>
+					<p class="text-base text-gray-700 md:text-lg">
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+					</p>
+				</div>
+				<div class="grid gap-5 row-gap-8 sm:grid-cols-2">
+					<div class="bg-white border-l-4 shadow-sm border-deep-purple-accent-400">
+						<div class="h-full p-5 border border-l-0 rounded-r">
+							<h6 class="mb-2 font-semibold leading-5">
+								I'll be sure to note that in my log
+							</h6>
+							<p class="text-sm text-gray-900">
+								Lookout flogging bilge rat main sheet bilge water nipper fluke to go on account heave down.
+							</p>
+						</div>
+					</div>
+					<div class="bg-white border-l-4 shadow-sm border-deep-purple-accent-400">
+						<div class="h-full p-5 border border-l-0 rounded-r">
+							<h6 class="mb-2 font-semibold leading-5">
+								A business big enough that it could be listed
+							</h6>
+							<p class="text-sm text-gray-900">
+								Those options are already baked in with this model shoot me an email clear.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div>
+				<img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="/images/{{asset('banner.jpg')}}" alt=""/>
+			</div>
 		</div>
-	</section>
+	</div>
 
 {% endblock %}
